@@ -1,14 +1,75 @@
-button{
-  margin-left: 25%;
-  margin-top: 10px;
+
+.calendarTable{
+  margin-left:25%;
+  margin-right:25%;
+
 }
+.calRow:hover{
+  cursor: pointer;
+  color: red;
+  weight:bold;
+  background:rgb(250,250,250);
+}
+#inputBearer{
+  width: 90%;
+  height: 50%;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+#centeredHeader{
+  position: relative;
+  height: 100%;
+}
+#header{
+  width:100%;
+  background-color: rgb(230, 248, 248);
+  height:100px;
+  /* padding: 10px 50px; */
+}
+#content{
+  float:left;
+  padding:40px;
+  width:730px;
+  /* margin-left:20%; */
+}
+#sideBar{
+  float:left;
+  padding:20px;
+  width:148px;
+  background-color: #dedede;
+  min-height: 200px;
+  text-align: center;
 
-
-
-
-
-
-
+  /* position: fixed; */
+  /* width:20%;
+  height:100%; */
+  /* left:-200px; */
+}
+.myBtn{
+  margin:0;
+  padding:0;
+}
+#sideBar ul li{
+  /* padding:10px 0px; */
+  list-style-type: none;
+  margin:0;
+  padding:0;
+}
+#sideBar ul{
+}
+#sideBar .toggle-btn{
+  position: absolute;
+  left:10px;
+  top:20px;
+}
+#sideBar .toggle-btn span{
+display:block;
+width:10px;
+height:5px;
+margin:5px 0px;
+}
 
 
 

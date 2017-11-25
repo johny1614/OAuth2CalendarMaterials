@@ -1,60 +1,73 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <!-- <mat-button>Klik me!</mat-button> -->
-<button mat-raised-button (click)="login()">Login</button>
-<mat-sidenav-container class="example-container">
-    <button id="nav" mat-raised-button (click)="sidenav.open()">Show tokens</button>
-
-  <mat-sidenav #sidenav class="example-sidenav">
-    Jolly good!
-  </mat-sidenav>
-
-  <div class="example-sidenav-content">
+<div id="header">
+  <div id="centeredHeader">
+    <input id="inputBearer" placeholder="Bearer token" [(ngModel)]="bearerToken" size="270">
   </div>
-
-</mat-sidenav-container>
-<!-- <mat-form-field formControlName="picker">
-  <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-  <mat-datepicker #picker></mat-datepicker>
-</mat-form-field> -->
-
-<div *ngIf="dataSource.data.length>0" class="example-container mat-elevation-z8">
-  <div class="example-header">
-    <mat-form-field>
-      Filter:<input matInput class="filterInput" (keyup)="applyFilter($event.target.value)" placeholder="">
-    </mat-form-field>
-  </div>
-
-  <mat-table #table [dataSource]="dataSource">
-
-    <!-- Position Column -->
-    <ng-container matColumnDef="position">
-      <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
-    </ng-container>
-
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
-    </ng-container>
-
-    <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
-    </ng-container>
-
-    <!-- Color Column -->
-    <ng-container matColumnDef="symbol">
-      <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
-    </ng-container>
-
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-  </mat-table>
 </div>
+<div id="sideBar">
+  <div class="toggle-btn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul>
+    <li>
+        <button class="myBtn" mat-raised-button (click)="login()">Login</button>
+    </li>
+    <li>
+        <button class="myBtn" mat-raised-button (click)="exchangeToken()">Exchange token</button>
+      </li>
+      <li>
+          <button class="myBtn" mat-raised-button (click)="getCalendars()">Load Calendars</button>
+
+        </li>
+  </ul>
+</div>
+
+<div id="content">
+
+Lorem ipsum dolor sit amet purus at ipsum vitae leo. In eros ut nisl. Cras hendrerit eget, nonummy consequat sed, quam. Integer lacinia sit amet, felis. Morbi mattis. Pellentesque ac augue nec tellus suscipit in, mauris. Cras vitae erat id nulla erat volutpat. Maecenas nisl nulla id justo orci ut arcu. Duis eget lectus. Vestibulum ante ullamcorper ac, laoreet metus nec ligula condimentum ultricies, hendrerit sollicitudin ligula dui, ultrices fringilla orci. Proin vel lorem. Curabitur ut augue. Morbi urna eros mauris, adipiscing dui turpis at ultrices posuere, odio. Suspendisse auctor, sapien leo et magnis dis parturient montes, nascetur ridiculus mus. Nunc sed felis vitae fermentum libero wisi, dapibus tellus. Vestibulum nibh. Fusce gravida, nis
+
+</div>
+
+
+  <mat-table class="calendarTable" #table [dataSource]="dataSrc" *ngIf="areCalendars">
+
+          <ng-container matColumnDef="summary">
+            <mat-header-cell *matHeaderCellDef> Summary </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.summary}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="description">
+            <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.description}} </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedCols"></mat-header-row>
+          <mat-row class="calRow" *matRowDef="let row; columns: displayedCols;" (click)="loadSingle(row)"></mat-row>
+        </mat-table>
+
+
+
+
+
+
+        <mat-table class="singleCalTable" #table [dataSource]="calSrc" *ngIf="isCal">
+
+                      <ng-container matColumnDef="summary">
+                        <mat-header-cell *matHeaderCellDef> Summary </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.summary}} </mat-cell>
+                      </ng-container>
+
+                      <ng-container matColumnDef="start['dateTime']">
+                          <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+                          <mat-cell *matCellDef="let element"> {{parseDate(element.start.dateTime)}} </mat-cell>
+                        </ng-container>
+
+                      <mat-header-row *matHeaderRowDef="calCols"></mat-header-row>
+                      <mat-row class="calRow" *matRowDef="let row; columns: calCols;"></mat-row>
+                    </mat-table>
 
 
 
