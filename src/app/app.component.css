@@ -26,38 +26,33 @@
   width:100%;
   background-color: rgb(230, 248, 248);
   height:100px;
-  /* padding: 10px 50px; */
 }
 #content{
   float:left;
-  padding:40px;
+  padding:10px;
   width:730px;
-  /* margin-left:20%; */
 }
 #sideBar{
   float:left;
-  padding:20px;
-  width:148px;
+  /* padding:15px; */
+  /* width:148px; */
   background-color: #dedede;
   min-height: 200px;
-  text-align: center;
-
-  /* position: fixed; */
-  /* width:20%;
-  height:100%; */
-  /* left:-200px; */
 }
 .myBtn{
-  margin:0;
-  padding:0;
+  /* margin-:0; */
+  /* padding:0px 5px; */
+  border:1px solid rgb(44, 42, 42);
+  /* padding: 20px 0px; */
+  width:100%;
+  align-content: center;
 }
-#sideBar ul li{
-  /* padding:10px 0px; */
-  list-style-type: none;
-  margin:0;
-  padding:0;
+#sideBar li{
+  margin:10px 0px;
 }
 #sideBar ul{
+  list-style-type: none;
+  -webkit-padding-start: 0;
 }
 #sideBar .toggle-btn{
   position: absolute;
