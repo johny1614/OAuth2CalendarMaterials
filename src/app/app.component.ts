@@ -43,6 +43,16 @@ createTokenHeader(){
 const h=new Headers(headers);
 return h;
 }
+truncate(selector, maxLength) {
+  var element = document.querySelector(selector),
+      truncated = element.innerText;
+
+  if (truncated.length > maxLength) {
+      truncated = truncated.substr(0,maxLength) + '...';
+  }
+  return truncated;
+}
+
 parseDate(date:String){
   let parsedDate = date.replace('T',' ');
   let parsedDateFinally=parsedDate.split('+')

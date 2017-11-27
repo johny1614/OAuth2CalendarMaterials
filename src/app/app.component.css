@@ -1,8 +1,24 @@
 
 .calendarTable{
-  margin-left:25%;
-  margin-right:25%;
-
+  margin-left:15%;
+  margin-right:15%;
+  width:100%;
+}
+#calendarTitle{
+  margin-left:50%;
+  margin-right:50%;
+  font-family: 'Pacifico', cursive;
+  font-size:50px;
+  /* margin-right:30%; */
+  /* width:40%; */
+}
+.calendarTable mat-header-cell{
+  font-weight: bold;
+  font-family: 'Rubik', sans-serif;
+}
+.calendarTable mat-row{
+max-height: 80px;
+font-family: 'Rubik', sans-serif;
 }
 .calRow:hover{
   cursor: pointer;
@@ -24,31 +40,45 @@
 }
 #header{
   width:100%;
-  background-color: rgb(230, 248, 248);
+  /* background-color: rgb(248, 199, 176); */
+  background: linear-gradient(to right,#d3c7b2,rgb(219, 200, 138),#d3c7b2); /* Standard syntax (must be last) */
+
   height:100px;
 }
 #content{
   float:left;
   padding:10px;
-  width:730px;
+  width:1100px;
 }
 #sideBar{
   float:left;
   /* padding:15px; */
   /* width:148px; */
-  background-color: #dedede;
-  min-height: 200px;
+  background-color: #d3c7b2;
+  /* height:100%; */
+  min-height: 5000px;
+}
+.myBtn:hover{
+  background-color:#f0d19d;
+  cursor: pointer;
 }
 .myBtn{
   /* margin-:0; */
   /* padding:0px 5px; */
-  border:1px solid rgb(44, 42, 42);
+  /* border:1px solid rgb(103, 134, 170); */
+  /* color:#dedede */
   /* padding: 20px 0px; */
+  padding: 5px 0px;
+  text-align: center;
   width:100%;
+  background-color:#d3c7b2;
   align-content: center;
+  font-weight: 500;
+  font-family: 'Rubik', sans-serif;
 }
+
 #sideBar li{
-  margin:10px 0px;
+  /* margin:10px 0px; */
 }
 #sideBar ul{
   list-style-type: none;
@@ -62,8 +92,8 @@
 #sideBar .toggle-btn span{
 display:block;
 width:10px;
-height:5px;
-margin:5px 0px;
+/* height:5px; */
+/* margin:5px 0px; */
 }
 
 
@@ -92,4 +122,10 @@ margin:5px 0px;
 }
 .filterInput{
   border-bottom: 1px solid black;
+}
+.singleCalTable{
+  margin-top:120px;
+  margin-left:15%;
+  margin-right:15%;
+  /* width:100%; */
 }

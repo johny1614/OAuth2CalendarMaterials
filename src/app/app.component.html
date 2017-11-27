@@ -1,3 +1,6 @@
+<link href="https://fonts.googleapis.com/css?family=Pacifico|Rubik" rel="stylesheet">
+
+
 <!--The content below is only a placeholder and can be replaced.-->
 <!-- <mat-button>Klik me!</mat-button> -->
 <div id="header">
@@ -13,13 +16,16 @@
   </div>
   <ul>
     <li>
-        <button class="myBtn" mat-raised-button (click)="login()">Login</button>
+      <p class="myBtn" (click)="login()">Login</p>
+        <!-- <button class="myBtn" mat-raised-button (click)="login()">Login</button> -->
     </li>
+      <p class="myBtn" (click)="exchangeToken()">Exchange token</p>
     <li>
-        <button class="myBtn" mat-raised-button (click)="exchangeToken()">Exchange token</button>
+        <!-- <button class="myBtn" mat-raised-button (click)="exchangeToken()">Exchange token</button> -->
       </li>
       <li>
-          <button class="myBtn" mat-raised-button (click)="getCalendars()">Load Calendars</button>
+      <p class="myBtn" (click)="getCalendars()">Load Calendars</p>
+          <!-- <button class="myBtn" mat-raised-button (click)="getCalendars()">Load Calendars</button> -->
 
         </li>
   </ul>
@@ -27,15 +33,11 @@
 
 <div id="content">
 
-Lorem ipsum dolor sit amet purus at ipsum vitae leo. In eros ut nisl. Cras hendrerit eget, nonummy consequat sed, quam. Integer lacinia sit amet, felis. Morbi mattis. Pellentesque ac augue nec tellus suscipit in, mauris. Cras vitae erat id nulla erat volutpat. Maecenas nisl nulla id justo orci ut arcu. Duis eget lectus. Vestibulum ante ullamcorper ac, laoreet metus nec ligula condimentum ultricies, hendrerit sollicitudin ligula dui, ultrices fringilla orci. Proin vel lorem. Curabitur ut augue. Morbi urna eros mauris, adipiscing dui turpis at ultrices posuere, odio. Suspendisse auctor, sapien leo et magnis dis parturient montes, nascetur ridiculus mus. Nunc sed felis vitae fermentum libero wisi, dapibus tellus. Vestibulum nibh. Fusce gravida, nis
-
-</div>
-
-
+  <p *ngIf="areCalendars" id="calendarTitle"> Calendars</p>
   <mat-table class="calendarTable" #table [dataSource]="dataSrc" *ngIf="areCalendars">
 
           <ng-container matColumnDef="summary">
-            <mat-header-cell *matHeaderCellDef> Summary </mat-header-cell>
+            <mat-header-cell *matHeaderCellDef > Summary </mat-header-cell>
             <mat-cell *matCellDef="let element"> {{element.summary}} </mat-cell>
           </ng-container>
 
@@ -72,5 +74,6 @@ Lorem ipsum dolor sit amet purus at ipsum vitae leo. In eros ut nisl. Cras hendr
 
 
 
+                  </div>
 
 
