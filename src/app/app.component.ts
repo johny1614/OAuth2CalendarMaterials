@@ -18,7 +18,7 @@ export class AppComponent implements OnInit{
   }
   title = 'app';
   displayedCols = ['summary','description'];
-  calCols=['summary',`start['dateTime']`];
+  calCols=['summary',`start['dateTime']`,'description'];
   dataSrc=[];
   calSrc=[];
   isCal=false;
@@ -54,9 +54,15 @@ truncate(selector, maxLength) {
 }
 
 parseDate(date:String){
-  let parsedDate = date.replace('T',' ');
-  let parsedDateFinally=parsedDate.split('+')
-  return parsedDateFinally[0];
+  const parsedT = date.replace('T',' ');
+  const parsedPlus=parsedT.split('+');
+  const parsedDeletedLastZeros=parsedPlus[0].split(':00');
+  console.log('parsed:',parsedDeletedLastZeros[0],parsedDeletedLastZeros[0].length);
+  if(parsedDeletedLastZeros[0].length===13){
+    const parsedWithAddedZerosForMinutes=parsedDeletedLastZeros[0]+':00';
+    return parsedWithAddedZerosForMinutes;//
+  }
+  return parsedDeletedLastZeros[0];
 }
 
 getCalendars(){

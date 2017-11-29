@@ -50,14 +50,7 @@ font-family: 'Rubik', sans-serif;
   padding:10px;
   width:1100px;
 }
-#sideBar{
-  float:left;
-  /* padding:15px; */
-  /* width:148px; */
-  background-color: #d3c7b2;
-  /* height:100%; */
-  min-height: 5000px;
-}
+
 .myBtn:hover{
   background-color:#f0d19d;
   cursor: pointer;
@@ -76,7 +69,15 @@ font-family: 'Rubik', sans-serif;
   font-weight: 500;
   font-family: 'Rubik', sans-serif;
 }
-
+#sideBar{
+  float:left;
+  /* padding:15px; */
+  /* width:148px; */
+  background-color: #d3c7b2;
+  /* height:100%; */
+  min-height: 5000px;
+  width:160px;
+}
 #sideBar li{
   /* margin:10px 0px; */
 }
@@ -127,5 +128,6 @@ width:10px;
   margin-top:120px;
   margin-left:15%;
   margin-right:15%;
+  width:80%;
   /* width:100%; */
 }

@@ -62,6 +62,11 @@
                         <mat-cell *matCellDef="let element"> {{element.summary}} </mat-cell>
                       </ng-container>
 
+                      <ng-container matColumnDef="description">
+                        <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.description}} </mat-cell>
+                      </ng-container>
+
                       <ng-container matColumnDef="start['dateTime']">
                           <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
                           <mat-cell *matCellDef="let element"> {{parseDate(element.start.dateTime)}} </mat-cell>
