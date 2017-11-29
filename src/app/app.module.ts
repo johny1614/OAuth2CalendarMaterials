@@ -11,10 +11,12 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { NgIf } from '@angular/common';
 import {HttpModule} from '@angular/http';
 import { FormsModule } from '@angular/forms';
-
+import {MatDialogModule} from '@angular/material/dialog';
+import { CorsDialogComponent } from './cors-dialog/cors-dialog.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CorsDialogComponent
   ],
   imports: [
     FormsModule,
@@ -24,6 +26,7 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MatSidenavModule,
     HttpModule,
+    MatDialogModule,
     // MatFormFieldControl,
     MatInputModule,
     MatTableModule,

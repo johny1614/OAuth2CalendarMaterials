@@ -1,13 +1,14 @@
 import {HttpModule,Http,Headers} from '@angular/http';
 import { Component, OnInit } from '@angular/core';
-import { MatTableDataSource } from '@angular/material';
+import { MatTableDataSource, MatDialog } from '@angular/material';
+import { CorsDialogComponent } from './cors-dialog/cors-dialog.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  constructor(public http:Http){}
+  constructor(public http:Http,public dialog: MatDialog){}
   ngOnInit(): void {
     console.log('w init');
     this.accessToken=this.getAccessToken(window.location.href)
@@ -53,6 +54,7 @@ truncate(selector, maxLength) {
   return truncated;
 }
 
+
 parseDate(date:String){
   const parsedT = date.replace('T',' ');//
   const parsedPlus=parsedT.split('+');
@@ -77,10 +79,14 @@ getCalendars(){
       if(this.dataSrc['data'].length>0){
         this.areCalendars=true;
       }
-
-
     },
-    (error)=>{console.log(error);}
+    (error)=>{
+      if(error.status=="401"){
+        alert("Incorrect bearer's token");
+      }else{
+        alert("Please switch off your CORS");
+      }
+    }
   );
 }
 
@@ -119,7 +125,13 @@ headers.append('Content-Type', 'application/x-www-form-urlencoded');
       this.resp=JSON.parse(res['_body']);
       this.bearerToken=this.resp['access_token'];
     },
-    (error)=>{console.log(error);
+    (error)=>{
+      if(error.status===400){
+        alert("You have already get bearer's token");
+      }
+      else{
+        alert("Please switch ON your CORS");
+      }
     }
   );
 }
