@@ -63,23 +63,36 @@ font-family: 'Rubik', sans-serif;
   /* padding: 20px 0px; */
   padding: 5px 0px;
   text-align: center;
-  width:100%;
+  /* width:100%; */
+  /* float: left; */
   background-color:#d3c7b2;
   align-content: center;
   font-weight: 500;
   font-family: 'Rubik', sans-serif;
+}
+#buttonList{
+  /* width:100%; */
+  /* border: 2px solid purple; */
+}
+.myBtnItem{
+  /* margin-right: 10px; */
+  /* background-color: green; */
+  /* border: 2px solid red; */
+  /* width:100%; */
+  /* float:left; */
+  position:relative;
+  /* position: absolute;    */
+  transform: translate(-13%,0%);
+
 }
 #sideBar{
   float:left;
   /* padding:15px; */
   /* width:148px; */
   background-color: #d3c7b2;
-  /* height:100%; */
-  min-height: 5000px;
+  height:100%;
+  /* min-height: 5000px; */
   width:160px;
-}
-#sideBar li{
-  /* margin:10px 0px; */
 }
 #sideBar ul{
   list-style-type: none;

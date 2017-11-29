@@ -54,7 +54,7 @@ truncate(selector, maxLength) {
 }
 
 parseDate(date:String){
-  const parsedT = date.replace('T',' ');
+  const parsedT = date.replace('T',' ');//
   const parsedPlus=parsedT.split('+');
   const parsedDeletedLastZeros=parsedPlus[0].split(':00');
   console.log('parsed:',parsedDeletedLastZeros[0],parsedDeletedLastZeros[0].length);
